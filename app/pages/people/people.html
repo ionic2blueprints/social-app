@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar primary>
+    <ion-title>
+      People
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="about">
+  <ion-searchbar (ionInput)="getUser($event)" placeholder="Search with username">
+  </ion-searchbar>
+
+  <ion-list>
+    <ion-item text-wrap *ngFor="let user of users | async" [hidden]="uid === user?.$key">
+      <ion-avatar item-left>
+        <img *ngIf="user?.avatar" [src]="user?.avatar">
+        <img *ngIf="!user?.avatar" src="images/defaultAvatar.png">
+      </ion-avatar>
+      <h2>{{(user)?.name}}</h2>
+      <button item-right secondary (click)="userProfile(user)">Profile</button>
+      <button item-right (click)="followUser(user)">Follow</button>
+    </ion-item>
+  </ion-list>
+</ion-content>

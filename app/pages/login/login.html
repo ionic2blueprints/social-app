@@ -1,0 +1,36 @@
+<ion-header>
+    <ion-navbar primary>
+        <ion-title text-center>Login</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="padding">
+    <form [ngFormModel]="loginForm">
+        <ion-list>
+            <div padding text-center>
+                <img src="images/logo.png">
+            </div>
+
+            <ion-item>
+                <ion-label floating>Email</ion-label>
+                <ion-input type="text" ngControl="email"></ion-input>
+            </ion-item>
+
+            <ion-item>
+                <ion-label floating>Password</ion-label>
+                <ion-input type="password" ngControl="password"></ion-input>
+            </ion-item>
+        </ion-list>
+        
+        <div padding>
+            <button primary block (click)="signin()" [disabled]="!loginForm.valid">Sign In</button>
+        </div>
+        
+        <div padding>
+            <button full clear secondary (click)="createAccount()">
+                <ion-icon name="person"></ion-icon>
+                Create an Account
+            </button>
+        </div>
+    </form>
+</ion-content>

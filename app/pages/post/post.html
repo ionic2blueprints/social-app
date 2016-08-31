@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar primary>
+    <ion-title>
+      Write Post
+    </ion-title>
+    <ion-buttons end>
+      <button (click)="addImage()"><ion-icon name="image"></ion-icon></button>
+      <button (click)="dismiss()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="post-page">
+  <ion-item>
+    <ion-textarea [(ngModel)]="postContent" rows="20" max-length="140" placeholder="Enter your post"></ion-textarea>
+  </ion-item>
+</ion-content>
+
+<ion-footer>
+    <ion-toolbar>
+        <button (click)="sendPost()" full>Post</button>
+    </ion-toolbar>
+</ion-footer>

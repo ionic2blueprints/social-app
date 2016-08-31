@@ -1,0 +1,8 @@
+* Each User follow himself
+* Add Friends.
+* Show friends posts.
+* Post Comments.
+* Profile Update.
+* Picture Uploads in Profile and Message.
+* Add Reference to Include Chat.
+* Delete Comment and Posts.

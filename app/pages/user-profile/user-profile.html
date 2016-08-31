@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar primary>
+    <ion-title>
+      {{user?.username}}
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+      <img *ngIf="user?.avatar" [src]="user?.avatar">
+      <img *ngIf="!user?.avatar" src="images/defaultAvatar.png">
+  </ion-card>
+
+  <ion-card>
+        <ion-item text-wrap>{{user?.username}}
+         <ion-note item-right>
+           Username
+         </ion-note> 
+        </ion-item>
+        <ion-item text-wrap><ion-icon secondary item-left name="person"></ion-icon>{{user?.name}}</ion-item>
+        <ion-item text-wrap><ion-icon secondary item-left name="mail"></ion-icon>{{user?.email}}</ion-item>
+        <ion-item text-wrap *ngIf="user?.about"><ion-icon secondary item-left name="create"></ion-icon><p *ngIf="user?.about">{{user?.about}}</p></ion-item>
+        <div padding>
+            <button full primary (click)="followUser(user)">Follow</button>
+        </div>
+</ion-card>
+</ion-content>

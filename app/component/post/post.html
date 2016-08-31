@@ -1,0 +1,20 @@
+<ion-card>
+    <ion-item>
+      <ion-avatar item-left>
+        <img *ngIf="(poster | async)?.avatar" [src]="(poster | async)?.avatar">
+        <img *ngIf="!(poster | async)?.avatar" src="images/defaultAvatar.png">
+      </ion-avatar>
+      <h2>{{(poster | async)?.name}}</h2>
+      <p><p>
+    </ion-item>
+
+    <img *ngIf="(post| async)?.image" [src]="(post | async)?.image">
+
+    <ion-card-content>
+      <p>{{(post | async)?.content}}</p>
+    </ion-card-content>
+
+    <ion-item-divider>
+      {{(post | async)?.timestamp/1000 | amFromUnix| amTimeAgo }}
+    </ion-item-divider>
+</ion-card>

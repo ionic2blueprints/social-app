@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-navbar primary>
+    <ion-title>Timeline</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="home" fullscreen>
+  <post *ngFor="let feed of feeds" [feed]="feed">
+  </post>
+</ion-content>
+
+<ion-footer>
+  <button (click)="openPost()" secondary fab fab-right fab-bottom><ion-icon name="add"></ion-icon></button>
+</ion-footer>

@@ -1,0 +1,44 @@
+<ion-header>
+    <ion-navbar primary>
+        <ion-title>Create Account</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <form [ngFormModel]="createForm">
+        <ion-list>
+            <ion-item>
+                <ion-label floating>Username</ion-label>
+                <ion-input type="text" ngControl="username"></ion-input>
+            </ion-item>
+            
+            <ion-item>
+                <ion-label floating>Name</ion-label>
+                <ion-input type="text" ngControl="name"></ion-input>
+            </ion-item>
+
+            <ion-item>
+                <ion-label floating>Email</ion-label>
+                <ion-input type="text" ngControl="email"></ion-input>
+            </ion-item>
+            
+            <ion-item>
+                <ion-label floating>Password</ion-label>
+                <ion-input type="password" ngControl="password"></ion-input>
+            </ion-item>
+            <ion-item text-wrap *ngIf="password.dirty && !password.valid">
+                Password should have at least 6 characters.
+            </ion-item>
+            <ion-item>
+                <ion-label floating>Enter Password again</ion-label>
+                <ion-input type="password" ngControl="repass"></ion-input>
+            </ion-item>
+
+            
+        </ion-list>
+        
+        <div padding>
+            <button primary block (click)="createAccount()" [disabled]="!createForm.valid">Create Account</button>
+        </div>
+    </form>
+</ion-content>

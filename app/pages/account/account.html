@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-navbar primary>
+    <ion-title>
+      Account
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+      <img *ngIf="user?.avatar" [src]="user?.avatar">
+      <img *ngIf="!user?.avatar" src="images/defaultAvatar.png">
+      <div padding>
+        <button full primary (click)="updatePicture()">Update Picture</button>
+      </div>
+  </ion-card>
+  <ion-card>
+    <ion-item>
+        <ion-label floating>Username</ion-label>
+        <ion-input type="text" disabled=true [value]="user?.username"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label floating>Name</ion-label>
+        <ion-input type="text" [(ngModel)]="user.name"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label floating>About me</ion-label>
+        <ion-textarea type="text" [(ngModel)]="user.about"></ion-textarea>
+    </ion-item>
+    <div padding>
+        <button full primary (click)="updateProfile()">Update Profile</button>
+    </div>
+  </ion-card>
+
+<div padding>
+  <button full dark (click)="logout()">Logout</button>
+</div>
+</ion-content>
